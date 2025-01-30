@@ -1,4 +1,5 @@
 import { combineReducers, createStore } from "redux";
+import { thunk } from "redux-thunk";
 import accountReducer from "./features/account/accountSlice";
 import customerReducer from "./features/customer/customerSlice";
 

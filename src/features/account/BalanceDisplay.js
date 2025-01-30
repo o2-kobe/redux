@@ -8,8 +8,8 @@ function formatCurrency(value) {
 }
 
 function BalanceDisplay() {
-  const fullName = useSelector((state) => state.account.fullName);
-  return <div className="balance">{formatCurrency(fullName)}</div>;
+  const balance = useSelector((state) => state.account.balance);
+  return <div className="balance">{formatCurrency(balance)}</div>;
 }
 
 export default BalanceDisplay;
