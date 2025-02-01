@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deposit, payloan, requestLoan, withdraw } from "./accountSlice";
+import { deposit, withdraw, requestLoan, payloan } from "./accountSlice";
 
+// console.log(requestLoan(12, "er"));
 function AccountOperations() {
   const [depositAmount, setDepositAmount] = useState("");
   const [withdrawalAmount, setWithdrawalAmount] = useState("");
@@ -19,6 +20,7 @@ function AccountOperations() {
   function handleDeposit() {
     if (!depositAmount) return;
     dispatch(deposit(depositAmount, currency));
+    // dispatch(deposit(depositAmount));
     setDepositAmount("");
   }
 
@@ -30,7 +32,7 @@ function AccountOperations() {
   }
 
   function handleRequestLoan() {
-    if (!loanAmount || loanPurpose) return;
+    // if (!loanAmount || !loanPurpose) return;
     dispatch(requestLoan(loanAmount, loanPurpose));
     setLoanAmount("");
     setLoanPurpose("");
